@@ -1,0 +1,275 @@
+import { Notes, Image } from 'mdx-deck'
+
+import { dark } from 'mdx-deck/themes'
+const modded = {
+  ...dark,
+  // fontSizes: [
+  //   "2.75em",
+  //   "3em",
+  //   "3.5em",
+  //   "4em",
+  //   "5em"
+  // ]
+}
+import nightOwl from 'prism-react-renderer/themes/nightOwl'
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
+
+export { modded as theme }
+
+# TypeScript Workshop
+## le capra way
+
+---
+# Workshop outline
+ - why ts
+ - basic ts
+ - less basic ts
+ - generics
+ - redux patterns
+ - react
+ - ts vs the rest
+
+---
+<Image src='src/images/yinyang.jpg' size="800px 600px" />
+
+---
+# Main take away
+Enables moving fast and slow
+- Fast: instant feedback
+- Slow: investing in types
+
+<Notes>
+  The main take away I want you all to have at the end of this is:
+  Fast - compile time errors. Nothing faster. Kinda like Peer programing
+  Slow - Working slow involves stopping and thinking - benefitial?.
+
+  TS enables refactoring
+
+  The implementation is the correct documentation
+  Types is the abstraction
+
+</Notes>
+---
+<CodeSurfer
+  theme={nightOwl}
+  title="TypeScript basics"
+  notes=""
+  code={require("!raw-loader!./src/slide-code/basics.1.ts")}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [2,6], notes:"primitive types - explicit and implicit" },
+    { range: [8,20], notes:"interface - shape of an object" },
+    { range: [22,28], notes:"type union" },
+    { range: [32,34], notes:"arrow functions" },
+    { range: [36,42], notes:"functions" },
+    { range: [44,51], notes:"return types" },
+    { range: [53,62], notes:"returning array" },
+    { range: [64,74], notes:"type alias" },
+    { range: [76,78], notes:"index signature - inside [ ]" },
+    { range: [80,86], notes:"keys can be anything" },
+  ]}
+/>
+
+---
+# Function overloading
+### I'm lazy --> using declare
+
+<Notes>
+  Declare tells TypeScript that something already exist.
+  This allows me to skip implementing functions.
+
+  Works well with Webpack.Define-Plugin when creating global constants
+</Notes>
+---
+<CodeSurfer
+  theme={nightOwl}
+  title="Function overloading"
+  notes="declare: implementation is elsewhere..."
+  code={require("!raw-loader!./src/slide-code/function-overloading.ts")}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [1,9], notes:"overloading - same name" },
+    { range: [7,9], notes:"function signature" },
+    { lines: [7,8,9,11,12], notes:"" },
+    { lines: [12], notes:"x: any, wat?" },
+    { range: [1,10], notes:"order matters" },
+    { range: [14,21], notes:"order matters... also for errors" },
+  ]}
+/>
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  title="Type Litterals"
+  notes="<3 <3 <3"
+  code={require("!raw-loader!./src/slide-code/type-litterals.2.ts")}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [2,6], notes:"These are NOT equivalent" },
+    { lines: [2,3,8,9], notes:"These are equivalent - because of 'const'" },
+    { range: [11,14], notes:"gives error" },
+    { range: [11,16], notes:"no overlap" },
+    { range: [11,19], notes:"no overlap" },
+  ]}
+/>
+
+---
+# Work work!
+  Tasks: 1, 2,
+
+---
+<CodeSurfer
+  theme={nightOwl}
+  title="Generics"
+  notes="Sweet and deadly"
+  code={require("!raw-loader!./src/slide-code/generics.3.ts")}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [2,9], notes:"Anything wrong with this?" },
+    { range: [2,13], notes:"x3: string[]???" },
+    { range: [2,4], notes:"type widening" },
+    { range: [15, 19], notes:"Type parameter" },
+    { range: [15, 24], notes:"correct return type" },
+    { range: [26, 33], notes:"errors" },
+    { range: [35, 40], notes:"type parameter constraints" },
+    { range: [42, 48], notes:"Fully typed 'pick'" },
+    { range: [42, 50], notes:"b2 & b3 gives errors" },
+    { range: [52, 56], notes:"also works :)" },
+  ]}
+/>
+---
+# Work work!
+
+Tasks: 3
+
+<Notes>
+  When done, help those around you.
+</Notes>
+
+---
+# Going crazy
+...with types and redux
+<Notes>
+  The following is a HUGE investment in types and typing.
+
+  It is not a requirement, but an option.
+</Notes>
+
+---
+
+<CodeSurfer
+  theme={nightOwl}
+  title="redux patterns"
+  notes="reduce boilerplate"
+  code={require("!raw-loader!./src/actions/action-helpers.ts")}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [1,5], notes:"A plain action" },
+    { lines: [2], notes: "Generic action type" },
+    { lines: [4], notes: "Define type as T - the discriminant." },
+    { range: [7,12], notes: "Action with payload" },
+    { lines: [9,11], notes: "Payload is type P" },
+    { range: [1,13], notes: "Defined action types" },
+    { range: [14,33], notes: "createAction" },
+    { range: [30,32], notes: "Action or ActionWithPayload" },
+    { range: [14,33], notes: "createAction" },
+    { range: [14,24], notes: "Function overloading - no implementation" },
+    { range: [14,16], notes: "returns Action" },
+    { range: [18,24], notes: "returns ActionWithPayload" },
+    { range: [26,29], notes: "signature combination" },
+    { range: [30,32], notes: "returns Action or ActionWithPayload" },
+  ]}
+/>
+
+---
+<CodeSurfer
+  theme={nightOwl}
+  title="redux-actions"
+  notes="Unionize - stronger together!"
+  code={require("!raw-loader!./src/slide-code/actions.ts")}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [1,2], notes:"import createAction (and ActionsUnion)" },
+    { range: [4,6], notes:"Action types" },
+    { range: [8,11], notes:"actionCreator" },
+    { range: [13,15], notes:"ActionUnion?" },
+    { lines: [8,9,10,11,14], notes:"typeof - the type of..." },
+  ]}
+/>
+
+---
+<CodeSurfer
+  theme={nightOwl}
+  title="ActionUnion"
+  notes="Unionize - stronger together!"
+  code={require("!raw-loader!./src/actions/action-definitions-adv.ts")}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [1,3], notes:"any and all functions" },
+    { range: [5,7], notes:"objects with string keys and FunctionType values" },
+    { range: [9,11], notes:"hold the tung straight in mouth" },
+    { lines: [5,6,7,10], notes:"hold the tung straight in mouth" },
+    { lines: [11], notes:"return ReturnType of AC['something']" },
+    { range: [9,11], notes:"ActionsUnion :)" },
+  ]}
+/>
+---
+# Work work
+Task: 4
+---
+<CodeSurfer
+  theme={nightOwl}
+  title="React"
+  notes=""
+  code={require("!raw-loader!./src/slide-code/react.tsx")}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [1,11], notes:"No magic" },
+    { range: [13,20], notes:"React.Component<Props, State>" },
+    { range: [21,40], notes: "" },
+    { range: [21, 28], notes: "" },
+    { lines: [21], notes:"(Optional) Warns if state is not initialized in constructor" },
+  ]}
+/>
+---
+# Work work
+Task: 5, 6
+---
+ # TS vs the rest
+---
+
+ ## TypeScript vs Elm, ReasonML
+
+ - TS is still JavaScript
+ - Lower cost of implementation
+ - Can eject to JavaScript
+---
+ ## TypeScript vs Flow
+ - TS has more GitHub stars?
+ - TS has better IDE (VS Code)?
+---
+pro tips
+
+- be smart and adapt
+- any is always red flag
+- type the easy things and the hard things
+- type so that refactoring is easy
+- type so that deleting code is easy
+- have runtime checks for unknown API return types
