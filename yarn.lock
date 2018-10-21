@@ -47,6 +47,10 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@types/ms@^0.7.30":
+  version "0.7.30"
+  resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.30.tgz#f6c38b7ecbbf698b0bbd138315a0f0f18954f85f"
+
 "@types/node@*":
   version "10.9.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.4.tgz#0f4cb2dc7c1de6096055357f70179043c33e9897"
@@ -57,9 +61,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@^16.0.8":
-  version "16.0.8"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.8.tgz#6e1366ed629cadf55860cbfcc25db533f5d2fa7d"
+"@types/react-dom@^16.0.9":
+  version "16.0.9"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.9.tgz#73ceb7abe6703822eab6600e65c5c52efd07fb91"
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
@@ -71,9 +75,9 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@^16.4.14":
-  version "16.4.14"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.14.tgz#47c604c8e46ed674bbdf4aabf82b34b9041c6a04"
+"@types/react@^16.4.18":
+  version "16.4.18"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.18.tgz#2e28a2e7f92d3fa7d6a65f2b73275c3e3138a13d"
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -1470,9 +1474,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-code-surfer@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/code-surfer/-/code-surfer-0.4.1.tgz#79b5dd850229daf5361d7da2c7351b605d2f31c9"
+code-surfer@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/code-surfer/-/code-surfer-0.5.3.tgz#7e5d4c366e56d060173e82c49d85edd6c273df1d"
   dependencies:
     glamor "^2.20.40"
     prism-react-renderer "^0.1.3"
@@ -3179,11 +3183,12 @@ mdurl@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
 
-mdx-deck-code-surfer@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/mdx-deck-code-surfer/-/mdx-deck-code-surfer-0.4.1.tgz#419451b2b3bd48f7b1fcc39abbb7b3759d44bfc9"
+mdx-deck-code-surfer@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/mdx-deck-code-surfer/-/mdx-deck-code-surfer-0.5.3.tgz#79e846eaa5b4b817abdca99ba08a5641ff3ff76e"
   dependencies:
-    code-surfer "^0.4.1"
+    code-surfer "^0.5.3"
+    memoize-one "^4.0.2"
 
 mdx-deck@^1.7.7:
   version "1.7.7"
@@ -3241,6 +3246,10 @@ mdx-deck@^1.7.7:
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
+
+memoize-one@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-4.0.2.tgz#3fb8db695aa14ab9c0f1644e1585a8806adc1aee"
 
 memory-fs@^0.4.0, memory-fs@~0.4.1:
   version "0.4.1"
@@ -3412,6 +3421,10 @@ move-concurrently@^1.0.1:
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+
+ms@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
 mute-stream@0.0.7:
   version "0.0.7"
@@ -4931,6 +4944,10 @@ typed-web-workers@1.*.*:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typescript@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.3.tgz#01b70247a6d3c2467f70c45795ef5ea18ce191d5"
 
 ua-parser-js@^0.7.18:
   version "0.7.18"

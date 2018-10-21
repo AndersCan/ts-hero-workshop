@@ -1,4 +1,4 @@
-import { MyBox } from "./03";
+import { MyBox } from "./03.1.task";
 
 const mbox1: MyBox<string> = new MyBox(
   "Hey!"

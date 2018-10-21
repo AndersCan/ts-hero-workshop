@@ -10,17 +10,12 @@ export class MyBox<A> {
 
   map<B>(fn: (a: A) => B): MyBox<B> {
     throw new Error();
-    // return new MyBox(fn(this.value));
   }
 
   flatMap<B>(
     fn: (a: A) => MyBox<B>
   ): MyBox<B> {
     throw new Error();
-
-    // return new MyBox(
-    //   fn(this.value).value
-    // );
   }
 
   public static combine<A, B, C>(
@@ -30,14 +25,5 @@ export class MyBox<A> {
     b: MyBox<B>
   ) => MyBox<C> {
     throw new Error();
-
-    // return function(
-    //   boxA: MyBox<A>,
-    //   boxB: MyBox<B>
-    // ) {
-    //   return boxA.flatMap(a =>
-    //     boxB.map(b => fn(a, b))
-    //   );
-    // };
   }
 }

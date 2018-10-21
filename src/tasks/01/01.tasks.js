@@ -2,7 +2,6 @@
  * Convert to a TypeScript file
  * 1. change extension
  * 2. add types to _EVERYTHING_
- *
  */
 
 export function foo(bar) {

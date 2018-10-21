@@ -4,10 +4,10 @@ import {
   AddAction
 } from "./04.tasks";
 
-const addAction: "ADD" = MyActions.add()
+export const addAction: "ADD" = MyActions.add()
   .type;
 
-function handlesAllActions(
+export function handlesAllActions(
   action: MyActions
 ): string {
   switch (action.type) {
@@ -16,6 +16,8 @@ function handlesAllActions(
       return "add";
     }
     case MyActionType.REMOVE: {
+      const type: "REMOVE" =
+        action.type;
       return "remove";
     }
     case MyActionType.ADD_MANY: {
