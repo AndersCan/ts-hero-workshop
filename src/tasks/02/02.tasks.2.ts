@@ -9,6 +9,12 @@ function printPendingState(
 ) {
   switch (ps) {
     // TODO: missing cases
+    case PendingState.Started: {
+      return "started";
+    }
+    case PendingState.Stopped: {
+      return "Stopped";
+    }
     default: {
       const state: never = ps;
     }

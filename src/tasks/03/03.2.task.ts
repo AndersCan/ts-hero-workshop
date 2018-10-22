@@ -46,7 +46,7 @@ function fullyTypedMs(
   return ms(`${amount} ${unit}`);
 }
 
-fullyTypedMs(1, "days");
+fullyTypedMs(1, TimeUnit.days);
 
 // alt 2
 interface InterfaceTimeUnit {
