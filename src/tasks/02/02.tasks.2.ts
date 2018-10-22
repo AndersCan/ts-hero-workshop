@@ -1,10 +1,8 @@
 import { PendingState } from "./02.tasks.1";
 
-declare const Started =
-  PendingState.Started;
+const Started = PendingState.Started;
 
-declare const Stopped =
-  PendingState.Stopped;
+const Stopped = PendingState.Stopped;
 
 function printPendingState(
   ps: PendingState
