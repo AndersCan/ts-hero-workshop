@@ -31,8 +31,60 @@ ms("Can we make it more typesafe?");
  *
  * YOU decide 100% how it looks and behaves :)
  */
-function fullyTypedMs(
-  ...somethingCool
-): number {
-  throw "Implement anything you want";
+
+enum TimeUnit {
+  days = "days",
+  hours = "hours",
+  minutes = "minutes",
+  seconds = "seconds"
 }
+
+function fullyTypedMs(
+  amount: number,
+  unit: TimeUnit
+): number {
+  return ms(`${amount} ${unit}`);
+}
+
+fullyTypedMs(1, "days");
+
+// alt 2
+interface InterfaceTimeUnit {
+  days: "days";
+  hours: "hours";
+  minutes: "minutes";
+  seconds: "seconds";
+}
+
+function fullyTypedMs2(
+  amount: number,
+  unit: keyof InterfaceTimeUnit
+): number {
+  return ms(`${amount} ${unit}`);
+}
+
+fullyTypedMs2(1, "days");
+
+// alt 3
+export const tuple = <
+  T extends string[]
+>(
+  ...args: T
+) => args;
+
+const list = tuple(
+  "days",
+  "hours",
+  "minutes",
+  "seconds"
+);
+type TimeUnit4 = typeof list[number]; // 'a'|'b'|'c'
+
+function fullyTypedMs3(
+  amount: number,
+  unit: TimeUnit4
+): number {
+  return ms(`${amount} ${unit}`);
+}
+
+fullyTypedMs3(2, "days");
