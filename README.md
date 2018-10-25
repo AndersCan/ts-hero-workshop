@@ -1,17 +1,17 @@
-# README
+# TS-HERO-WORKSHOP
 
-Det folk vil ha:
+> Don't be a *zero*, become a *hero* today!
 
-- Mindre boilerplate med react redux
-- Generics
-- Best practice med React
-- Mer avanserte tema og mindre kjente features
-- Migrering av JS apper
-- Hvorfor ikke flow?
-- Ting kunder etterspør
-- Gå igjenom tsconfig.json: hva blir output?
-- Vise mer enn bare enkle interface
 
-skrive definisjoner for en react component
-hoc react component
+## Slides
+Run `npm install && npm run start` to start the slideshow [locally](http://127.0.0.1:8080)
 
+
+
+## Tasks
+
+The tasks for the workshop are found [here](src/tasks/)
+
+The start of each `task` file contains information on what you are required to do.
+
+`task` files are often accompanied with a `depend` file. The depend file will often contain compile errors. These errors can be fixed by modifying the `task` file.
