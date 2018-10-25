@@ -32,6 +32,21 @@ ms("Can we make it more typesafe?");
  * YOU decide 100% how it looks and behaves :)
  */
 
+//alt 0
+
+function fullyTypedMs(
+  amount: number,
+  unit:
+    | "days"
+    | "hours"
+    | "minutes"
+    | "seconds"
+): number {
+  return ms(`${amount} ${unit}`);
+}
+
+fullyTypedMs(1, "days");
+
 enum TimeUnit {
   days = "days",
   hours = "hours",
@@ -39,16 +54,17 @@ enum TimeUnit {
   seconds = "seconds"
 }
 
-function fullyTypedMs(
+// alt 1
+function fullyTypedMs1(
   amount: number,
   unit: TimeUnit
 ): number {
   return ms(`${amount} ${unit}`);
 }
 
-fullyTypedMs(1, TimeUnit.days);
+fullyTypedMs1(1, TimeUnit.days);
 
-// alt 2
+// alt 2 - not a great solution
 interface InterfaceTimeUnit {
   days: "days";
   hours: "hours";
@@ -65,7 +81,8 @@ function fullyTypedMs2(
 
 fullyTypedMs2(1, "days");
 
-// alt 3
+// alt 3 - not great, but allows runtime checking
+// ex. assert(list.contains(unit))
 export const tuple = <
   T extends string[]
 >(
@@ -78,7 +95,7 @@ const list = tuple(
   "minutes",
   "seconds"
 );
-type TimeUnit4 = typeof list[number]; // 'a'|'b'|'c'
+type TimeUnit4 = typeof list[number];
 
 function fullyTypedMs3(
   amount: number,
@@ -87,4 +104,4 @@ function fullyTypedMs3(
   return ms(`${amount} ${unit}`);
 }
 
-fullyTypedMs3(2, "days");
+fullyTypedMs3(2, "minutes");

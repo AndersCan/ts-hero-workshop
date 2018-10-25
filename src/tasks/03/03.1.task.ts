@@ -15,9 +15,7 @@ export class MyBox<A> {
   flatMap<B>(
     fn: (a: A) => MyBox<B>
   ): MyBox<B> {
-    return new MyBox(
-      fn(this.value).value
-    );
+    return fn(this.value);
   }
 
   public static combine<A, B, C>(
@@ -30,8 +28,8 @@ export class MyBox<A> {
       boxA: MyBox<A>,
       boxB: MyBox<B>
     ) {
-      return boxA.flatMap(a =>
-        boxB.map(b => fn(a, b))
+      return new MyBox(
+        fn(boxA.get(), boxB.get())
       );
     };
   }
