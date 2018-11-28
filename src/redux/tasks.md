@@ -6,3 +6,7 @@
 
 # Task 2
 1. Create a "Counter" reducer that can INCREMENT and DECREMENT a number.
+
+# Task 3
+1. Crate your actions via a ActionCreators
+2. Can you make your Reducer function depend on the implementation of your ActionCreators? (*hint* ReturnType<>)
