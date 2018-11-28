@@ -25,3 +25,31 @@ function CounterReducer(
     }
   }
 }
+
+// # Task 3
+// 1. Crate your actions via a ActionCreators
+function inc(): "INCREMENT" {
+  return "INCREMENT";
+}
+
+function dec(): "DECREMENT" {
+  return "DECREMENT";
+}
+
+// 2. Can you make your Reducer function depend on the implementation of your ActionCreators? (*hint* ReturnType<>)
+
+function CounterReducer2(
+  state: number,
+  action:
+    | ReturnType<typeof inc>
+    | ReturnType<typeof dec>
+) {
+  switch (action) {
+    case "INCREMENT": {
+      return state + 1;
+    }
+    case "DECREMENT": {
+      return state - 1;
+    }
+  }
+}
